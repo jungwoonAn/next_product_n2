@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function ProductSearchFormCP() {
     const searchParams = useSearchParams()  // 브라우저에서 쿼리 스트링 처리
-    const router = useRouter()
 
     //URL에서 초기 값 가져오기
     const currentPage = searchParams.get('page') || '1';
@@ -16,6 +15,8 @@ export default function ProductSearchFormCP() {
     const [keyword, setKeyword] = useState(currentKeyword);
     const [sort, setSort] = useState(currentSort);
     const [size, setSize] = useState(currentSize); // size 상태 추가
+
+    const router = useRouter()
 
     const handleClickSearchButton = (e) => {
         e.preventDefault();

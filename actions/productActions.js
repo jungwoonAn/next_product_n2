@@ -48,7 +48,7 @@ export const putProduct = async (prevState, formData) => {
 
     const pno = formData.get('pno');
 
-    const updatedFormData = new FormData();
+    const updatedFormData = new FormData();  // 새로운 FormData 객체를 생성하여 추가할 것
     updatedFormData.append('pname', formData.get('pname'));
     updatedFormData.append('price', formData.get('price'));
     updatedFormData.append('sale', formData.get('sale'));

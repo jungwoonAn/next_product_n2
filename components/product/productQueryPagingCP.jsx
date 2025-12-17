@@ -53,7 +53,7 @@ export default function ProductQueryPagingCP({ total, requestParam }) {
                 {next && (
                     <li>
                         <Link
-                            href={`/todo/list?page=${end + 1}`}
+                            href={`/product/query?page=${end + 1}`}
                             className="px-3 py-1.5 text-sm font-medium text-gray-500 bg-white rounded-md border border-gray-300 hover:bg-gray-100 transition-colors"
                         >Next</Link>
                     </li>

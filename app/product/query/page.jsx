@@ -1,5 +1,4 @@
 import ProductQueryListCP from "@/components/product/productQueryListCP";
-import ProductQueryPagingCP from "@/components/product/productQueryPagingCP";
 import ProductSearchFormCP from "@/components/product/productSearchFormCP";
 
 export default async function ProductQueryPage({ params, searchParams }) {
@@ -27,8 +26,10 @@ export default async function ProductQueryPage({ params, searchParams }) {
         <div>
             <div>Product Query Page</div>
             <ProductSearchFormCP />
-            <ProductQueryListCP list={result.list} total={result.total} requestParam={result.pageRequestDTO}/>
-            <ProductQueryPagingCP total={result.total} requestParam={result.pageRequestDTO} />
+            <ProductQueryListCP 
+            list={result.list} 
+            total={result.total} 
+            requestParam={result.pageRequestDTO}/>
         </div>
     )
 }

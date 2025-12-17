@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProductQueryPagingCP from "./productQueryPagingCP";
 
 export default function ProductQueryListCP({ list, total, requestParam }) {
     const page = requestParam.page;
@@ -41,8 +42,10 @@ export default function ProductQueryListCP({ list, total, requestParam }) {
                                 <p className="text-xl font-bold text-blue-600 mt-2">₩{product.price.toLocaleString()}</p>
                             </div>
                         </Link>
-                    </div>)}
+                    </div>
+                )}
             </div>
+            <ProductQueryPagingCP total={total} requestParam={requestParam} />
         </div>
     )
 }
