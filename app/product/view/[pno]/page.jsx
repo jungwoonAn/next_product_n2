@@ -6,8 +6,12 @@ export async function generateStaticParams() {
     return arr;
 }
 
-export default async function ProductViewPage({ params, searchParam }) {
+export default async function ProductViewPage({ params, searchParams }) {
     const param = await params
+
+    const query = await searchParams
+
+    const from = query.from? decodeURIComponent(query.from) :'/product/catalog/1'
 
     const pno = param.pno
     console.log("pno : ", pno)
@@ -21,7 +25,7 @@ export default async function ProductViewPage({ params, searchParam }) {
     return (
         <div>
             <div>Product View Page</div>
-            <ProductViewCP product={product} />
+            <ProductViewCP product={product} from={from} />
         </div>
     )
 }
